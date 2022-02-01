@@ -10,7 +10,7 @@ const DigitalFace = () => {
   const [hoursState, setHoursState] = useState(now.getHours().toString().padStart(2, "0"))
 
   useEffect(() => {
-    const setDate = () => {
+    const updateTime = () => {
       const updatedDate = new Date()
 
       const seconds = updatedDate.getSeconds()
@@ -23,8 +23,8 @@ const DigitalFace = () => {
       setHoursState(hours.toString().padStart(2, "0"))
     }
 
-    setDate()
-    setInterval(setDate, 1000)
+    updateTime()
+    setInterval(updateTime, 1000)
   }, [])
 
   return (

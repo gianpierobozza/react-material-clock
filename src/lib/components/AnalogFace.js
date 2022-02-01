@@ -14,7 +14,7 @@ const AnalogFace = () => {
     const minutesHand = ReactDom.findDOMNode(innerAnalogClock).getElementsByClassName("minutes-hand")[0]
     const hoursHand = ReactDom.findDOMNode(innerAnalogClock).getElementsByClassName("hours-hand")[0]
 
-    const setDate = () => {
+    const updateTime = () => {
       const updatedDate = new Date()
 
       const seconds = updatedDate.getSeconds()
@@ -30,8 +30,8 @@ const AnalogFace = () => {
       hoursHand.style.transform = `rotate(${hoursDeg}deg)`
     }
 
-    setDate()
-    setInterval(setDate, 1000)
+    updateTime()
+    setInterval(updateTime, 1000)
   }, [])
 
   return (
