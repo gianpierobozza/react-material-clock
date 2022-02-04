@@ -5,6 +5,8 @@ import { useTheme } from "@mui/material/styles"
 import { Box } from "@mui/material"
 import "./styles/analog-clock.css"
 
+const weekdays = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+
 const AnalogFace = () => {
   const theme = useTheme()
 
@@ -59,6 +61,13 @@ const AnalogFace = () => {
             }}
           >
             {new Date().getUTCDate()}
+            <Box component="span"
+              sx={{
+                color: theme.palette.text.primary
+              }}
+            >
+              {weekdays[new Date().getDay()]}
+            </Box>
           </Box>
         </Box>
       </Box>

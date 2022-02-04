@@ -9,7 +9,7 @@
 
 .digital-clock {
   background-color: green;
-  border: 3px solid greenyellow;
+  border: 12px solid greenyellow;
   border-radius: 8px;
   box-shadow: 20px 20px 10px grey;
   display: flex;
@@ -24,7 +24,7 @@
   overflow: hidden;
 }
 
-.section > span {
+.section .digits {
   background-color: transparent;
   color: red;
   font-family: 'Segment7Standard';
@@ -37,7 +37,7 @@
   position: sticky;
 }
 
-.section .back {
+.section .backdrop {
   font-family: 'Segment7Standard';
   font-weight: normal;
   font-style: italic;
@@ -65,4 +65,8 @@
 
 .minute::after {
   animation: blink var(--second) infinite;
+}
+
+.date {
+  display: flex;
 }

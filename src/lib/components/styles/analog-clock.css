@@ -142,11 +142,16 @@
 
 .day-of-month {
   position: absolute;
-  width: 48px;
+  width: 62px;
   top: 45%;
-  left: 69%;
+  left: 68%;
   font-size: xx-large;
   font-weight: bold;
   text-align: center;
   box-shadow: 4px 4px 10px grey;
+}
+
+.day-of-month > span {
+  font-size: large;
+  padding-left: 4px;
 }

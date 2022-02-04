@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useEffect, useState } from "react"
-import { Box } from "@mui/material"
+import moment from "moment"
+import { Box, Grid } from "@mui/material"
 import "./styles/digital-clock.css"
 
 const DigitalFace = () => {
@@ -26,7 +27,7 @@ const DigitalFace = () => {
         setHoursState(hours.toString().padStart(2, "0"))
       }
     }
-    
+
     updateTime()
     setInterval(updateTime, 1000)
     return () => {
@@ -35,20 +36,33 @@ const DigitalFace = () => {
   }, [])
 
   return (
-    <Box component="div" className="digital-clock">
-      <Box component="div"className="hour section">
-        <Box component="span">{hoursState}</Box>
-        <Box component="div" className="back">88:</Box>
-      </Box>
-      <Box component="div"className="minute section">
-        <Box component="span">{minutesState}</Box>
-        <Box component="div" className="back">88:</Box>
-      </Box>
-      <Box component="div"className="second section">
-        <Box component="span">{secondsState}</Box>
-        <Box component="div" className="back">88</Box>
-      </Box>
-    </Box>
+    <Box sx={{ flexGrow: 1 }} sx={{width: "400px"}}>
+      <Grid container spacing={3}>
+        <Grid item xs>
+          <Box component="div" className="digital-clock">
+            <Box component="div" className="hour section">
+              <Box component="span" className="digits">{hoursState}</Box>
+              <Box component="div" className="backdrop">88:</Box>
+            </Box>
+            <Box component="div" className="minute section">
+              <Box component="span" className="digits">{minutesState}</Box>
+              <Box component="div" className="backdrop">88:</Box>
+            </Box>
+            <Box component="div" className="second section">
+              <Box component="span" className="digits">{secondsState}</Box>
+              <Box component="div" className="backdrop">88</Box>
+            </Box>
+          </Box>
+        </Grid>
+        <Grid item xs>
+          <Box component="div" className="date">
+            {
+              moment().format("ddd Do MMM YYYY")
+            }
+          </Box>
+        </Grid>
+      </Grid >
+    </Box >
   )
 }
 
