@@ -10,34 +10,44 @@ const DigitalFace = () => {
   const [hoursState, setHoursState] = useState(now.getHours().toString().padStart(2, "0"))
 
   useEffect(() => {
+    var active = true
+
     const updateTime = () => {
-      const updatedDate = new Date()
+      if (active) {
+        const updatedDate = new Date()
 
-      const seconds = updatedDate.getSeconds()
-      setSecondsState(seconds.toString().padStart(2, "0"))
+        const seconds = updatedDate.getSeconds()
+        setSecondsState(seconds.toString().padStart(2, "0"))
 
-      const minutes = updatedDate.getMinutes()
-      setMinutesState(minutes.toString().padStart(2, "0"))
+        const minutes = updatedDate.getMinutes()
+        setMinutesState(minutes.toString().padStart(2, "0"))
 
-      const hours = updatedDate.getHours()
-      setHoursState(hours.toString().padStart(2, "0"))
+        const hours = updatedDate.getHours()
+        setHoursState(hours.toString().padStart(2, "0"))
+      }
     }
-
+    
     updateTime()
     setInterval(updateTime, 1000)
+    return () => {
+      active = false
+    }
   }, [])
 
   return (
     <Box component="div" className="digital-clock">
-      <div className="hour section">
-        <ul><li>{hoursState}</li></ul>
-      </div>
-      <div className="minute section">
-        <ul><li>{minutesState}</li></ul>
-      </div>
-      <div className="second section">
-        <ul><li>{secondsState}</li></ul>
-      </div>
+      <Box component="div"className="hour section">
+        <Box component="span">{hoursState}</Box>
+        <Box component="div" className="back">88:</Box>
+      </Box>
+      <Box component="div"className="minute section">
+        <Box component="span">{minutesState}</Box>
+        <Box component="div" className="back">88:</Box>
+      </Box>
+      <Box component="div"className="second section">
+        <Box component="span">{secondsState}</Box>
+        <Box component="div" className="back">88</Box>
+      </Box>
     </Box>
   )
 }

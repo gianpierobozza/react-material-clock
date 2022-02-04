@@ -8,9 +8,14 @@
 }
 
 .digital-clock {
-  width: 400px;
-  height: 100px;
+  background-color: green;
+  border: 3px solid greenyellow;
+  border-radius: 8px;
+  box-shadow: 20px 20px 10px grey;
   display: flex;
+  width: 400px;
+  height: 75px;
+  padding: 40px 10px 40px 40px;
 }
 
 .section {
@@ -19,20 +24,29 @@
   overflow: hidden;
 }
 
-.section > ul {
-  background-color: green;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.section > ul > li {
+.section > span {
+  background-color: transparent;
+  color: red;
   font-family: 'Segment7Standard';
   font-weight: normal;
   font-style: italic;
-  color: red;
   font-size: 80px;
-  padding-top: 2px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  position: sticky;
+}
+
+.section .back {
+  font-family: 'Segment7Standard';
+  font-weight: normal;
+  font-style: italic;
+  font-size: 78px;
+  color: gray;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 0;
 }
 
 .minute::after,
