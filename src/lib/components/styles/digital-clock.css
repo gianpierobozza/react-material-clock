@@ -1,7 +1,3 @@
-:root {
-  --second: 1s;
-}
-
 @keyframes blink {
   from { content: ":"; }
   to { content: ""; }
@@ -66,7 +62,7 @@
 }
 
 .minute::after {
-  animation: blink var(--second) infinite;
+  animation: blink 1s infinite;
 }
 
 .date {
