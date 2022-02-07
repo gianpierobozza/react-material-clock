@@ -141,14 +141,14 @@
 }
 
 .day-of-month {
-  position: absolute;
-  width: 62px;
-  top: 45%;
-  left: 68%;
   font-size: xx-large;
   font-weight: bold;
   text-align: center;
+  padding: 0 4px;
   box-shadow: 4px 4px 10px grey;
+  position: absolute;
+  top: 44%;
+  left: 67%;
 }
 
 .day-of-month > span {

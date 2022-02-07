@@ -36,10 +36,10 @@ const DigitalFace = () => {
   }, [])
 
   return (
-    <Box sx={{ flexGrow: 1 }} sx={{width: "400px"}}>
-      <Grid container spacing={3}>
+    <Box sx={{ flexGrow: 1, width: "470px" }}>
+      <Grid container className="digital-clock">
         <Grid item xs>
-          <Box component="div" className="digital-clock">
+          <Box component="div" className="time">
             <Box component="div" className="hour section">
               <Box component="span" className="digits">{hoursState}</Box>
               <Box component="div" className="backdrop">88:</Box>

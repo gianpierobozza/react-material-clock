@@ -12,10 +12,12 @@
   border: 12px solid greenyellow;
   border-radius: 8px;
   box-shadow: 20px 20px 10px grey;
+  padding: 40px 10px 40px 40px;
+}
+
+.time {
   display: flex;
   width: 400px;
-  height: 75px;
-  padding: 40px 10px 40px 40px;
 }
 
 .section {
@@ -68,5 +70,11 @@
 }
 
 .date {
-  display: flex;
+  color: red;
+  font-family: 'monospace';
+  font-weight: normal;
+  font-size: 36px;
+  text-align: center;
+  text-shadow: 4px 4px gray;
+  width: 92%;
 }
