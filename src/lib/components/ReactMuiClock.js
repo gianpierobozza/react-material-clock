@@ -4,10 +4,11 @@ import { Box, IconButton, Stack } from "@mui/material"
 import AccessTimeIcon from "@mui/icons-material/AccessTime"
 import NumbersIcon from "@mui/icons-material/Numbers"
 import TimerIcon from "@mui/icons-material/Timer"
-
+import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty"
 import AnalogFace from "./AnalogFace"
 import DigitalFace from "./DigitalFace"
 import Stopwatch from "./Stopwatch"
+import Timer from "./Timer"
 
 const ReactMuiClock = () => {
   const [clockFaceStyle, setClockFaceStyle] = useState("analog")
@@ -19,10 +20,6 @@ const ReactMuiClock = () => {
     } else {
       setFunctionActive("clock")
     }
-  }
-
-  const handleFunctionChange = (activate) => {
-    setFunctionActive(activate)
   }
 
   return (
@@ -38,15 +35,23 @@ const ReactMuiClock = () => {
         <IconButton
           color="primary"
           aria-label="stopwatch"
-          onClick={() => handleFunctionChange("stopwatch")}
+          onClick={() => setFunctionActive("stopwatch")}
         >
           <TimerIcon />
+        </IconButton>
+        <IconButton
+          color="primary"
+          aria-label="stopwatch"
+          onClick={() => setFunctionActive("timer")}
+        >
+          <HourglassEmptyIcon />
         </IconButton>
       </Stack>
       <Box component="div">
         {clockFaceStyle === "analog" && functionActive === "clock" && <AnalogFace />}
         {clockFaceStyle === "digital" && functionActive === "clock" && <DigitalFace />}
         {functionActive === "stopwatch" && <Stopwatch />}
+        {functionActive === "timer" && <Timer />}
       </Box>
     </Box>
   )
