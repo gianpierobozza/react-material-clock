@@ -4,6 +4,7 @@ import { Box, IconButton, Stack } from "@mui/material"
 import AccessTimeIcon from "@mui/icons-material/AccessTime"
 import NumbersIcon from "@mui/icons-material/Numbers"
 import TimerIcon from "@mui/icons-material/Timer"
+
 import AnalogFace from "./AnalogFace"
 import DigitalFace from "./DigitalFace"
 import Stopwatch from "./Stopwatch"
@@ -31,8 +32,8 @@ const ReactMuiClock = () => {
           aria-label="clockFace"
           onClick={handleClockFaceChange}
         >
-          {clockFaceStyle === "digital" && <AccessTimeIcon />}
-          {clockFaceStyle === "analog" && <NumbersIcon />}
+          {(clockFaceStyle === "digital" || functionActive !== "clock") && <AccessTimeIcon />}
+          {(clockFaceStyle === "analog" && functionActive === "clock") && <NumbersIcon />}
         </IconButton>
         <IconButton
           color="primary"

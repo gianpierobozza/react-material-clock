@@ -1,5 +1,6 @@
 import * as React from "react"
 import { useEffect, useState } from "react"
+import { setDriftlessInterval } from "driftless"
 import moment from "moment"
 import { Box, Grid } from "@mui/material"
 import "./styles/digital-clock.css"
@@ -29,7 +30,7 @@ const DigitalFace = () => {
     }
 
     updateTime()
-    setInterval(updateTime, 1000)
+    setDriftlessInterval(updateTime, 1000)
     return () => {
       active = false
     }

@@ -11,6 +11,10 @@
   font-size: xx-large;
 }
 
+.decimals {
+  font-size: large;
+}
+
 .blink {
   animation: blinkAnimation 1s ease infinite;
 }

@@ -1,6 +1,7 @@
 import * as React from "react"
-import { useEffect } from "react"
 import * as ReactDom from "react-dom"
+import { useEffect } from "react"
+import { setDriftlessInterval } from "driftless"
 import { useTheme } from "@mui/material/styles"
 import { Box } from "@mui/material"
 import "./styles/analog-clock.css"
@@ -33,7 +34,7 @@ const AnalogFace = () => {
     }
 
     updateTime()
-    setInterval(updateTime, 1000)
+    setDriftlessInterval(updateTime, 1000)
   }, [])
 
   return (
